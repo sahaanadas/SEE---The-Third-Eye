@@ -1,17 +1,16 @@
 import cv2
+import pyttsx3
+import engineio
 import numpy as np
 import time
 from imutils.perspective import four_point_transform
-#from imutils import contours
+from imutils import contours
 import imutils
 from gtts import gTTS 
-  
+engineio = pyttsx3.init()
 # This module is imported so that we can  
-# play the converted audio
+# play the converted audio 
 import os
-import sys
-import pyttsx3
-engine = pyttsx3.init()
 camera = cv2.VideoCapture(0)
 
 def findTrafficSign():
@@ -92,6 +91,7 @@ def findTrafficSign():
             
             # show an image if rectangle was found
             #cv2.imshow("Warped", cv2.bitwise_not(warped))
+            
             # use function to detect the sign on the found rectangle
             detectedTrafficSign = identifyTrafficSign(warped)
             #print(detectedTrafficSign)
@@ -157,19 +157,25 @@ def identifyTrafficSign(image):
 
     cv2.imshow("Warped", image)
     if segments in SIGNS_LOOKUP:
-#        s=''
         k=SIGNS_LOOKUP[segments]
         print(k)
-        engine.say(k)
-        engine.runAndWait()
-        #l.append(k)
-        #print(l)
-        #s=''.join(l)
-        #print(s)
+        
+        engineio.say(k)
+        engineio.runAndWait()
+
+        #print(p+" "+k)
         return SIGNS_LOOKUP[segments]        
     else:
         return None
-#l=list()
-findTrafficSign()
+
+p=""   
+def main():
+
+    findTrafficSign()
+
+
+if __name__ == '__main__':
+    main()
+    
 
 
