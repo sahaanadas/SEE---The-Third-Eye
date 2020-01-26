@@ -2,7 +2,7 @@ According to WHO, 39 million peoples are estimated as blind worldwide. They are 
 
 The affected ones have been using the traditional white cane for many years which although being effective, still has a lot of disadvantages. Another way is, having a pet animal such as a dog, but it is really expensive.
 
-# So, the aim of the project ,"Third Eye", is to develop a cheap and more efficient way to help visually impaired to navigate with greater comfort, speed and confidence.
+ So, the aim of the project ,"Third Eye", is to develop a cheap and more efficient way to help visually impaired to navigate with greater comfort, speed and confidence.
 
 # The product consists of:
 # - The Smart Cap: 
